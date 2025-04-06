@@ -1,0 +1,69 @@
+
+/**HEADER**/
+
+#header {
+    background: linear-gradient(60deg, #BCD09F, #F1EAC0 80%);
+    width: 500px;
+    height: 500px;
+    border-radius: 1000px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 1;
+    margin-top: -360px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    animation-name: slideInDown;
+    animation-duration: 1.5s;
+}
+
+@keyframes slideInDown{
+    from{
+        transform: translate3d(-50%, -100%, 0);
+    }
+    to{
+        transform: translate3d(-50%, 0 , 0);
+    }
+}
+
+.nombre {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 26px;
+    color: #221C04;
+    font-style: italic;
+    padding-top: 310px; /* Mueve el texto hacia abajo dentro del círculo */
+}
+/**Color fondo**/
+body {
+    background-color: #F1EAC0;
+}
+/**MENU DE NAVEGACION**/
+#menu {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    font-size: larger;
+    margin-top: 200px;
+    color: #576E40;
+}
+
+.tarjeta {
+    background-color: #BCD09F;
+    border: 2px solid #C2654C;
+    color: #221C04;
+    border-radius: 20px; /*Redondear bordes*/
+    width: 90px; /*Ancho de la tarjeta*/
+    text-align: center;
+    padding: 20px; /*Tamaño de la tarjeta*/
+    font-weight: bold;
+}
+
+.tarjeta:hover {
+    background-color: #576E40;
+    color: #FFFFFF;
+}
+
