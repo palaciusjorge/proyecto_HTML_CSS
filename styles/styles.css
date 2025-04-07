@@ -1,6 +1,5 @@
 
 /**HEADER**/
-
 #header {
     background: linear-gradient(60deg, #BCD09F, #F1EAC0 80%);
     width: 500px;
@@ -12,7 +11,6 @@
     transform: translate(-50%);
     z-index: 1;
     margin-top: -360px;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,12 +19,12 @@
     animation-duration: 1.5s;
 }
 
-@keyframes slideInDown{
-    from{
+@keyframes slideInDown {
+    from {
         transform: translate3d(-50%, -100%, 0);
     }
-    to{
-        transform: translate3d(-50%, 0 , 0);
+    to {
+        transform: translate3d(-50%, 0, 0);
     }
 }
 
@@ -35,35 +33,123 @@
     font-size: 26px;
     color: #221C04;
     font-style: italic;
-    padding-top: 310px; /* Mueve el texto hacia abajo dentro del círculo */
+    padding-top: 310px;
 }
-/**Color fondo**/
+
+/**Body styles**/
 body {
     background-color: #F1EAC0;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-/**MENU DE NAVEGACION**/
+
+/**NAVIGATION MENU**/
 #menu {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 40px;
     font-size: larger;
     margin-top: 200px;
+    margin-bottom: 50px;
     color: #576E40;
+    flex-wrap: wrap;
+    width: 100%;
+    position: relative;
+    z-index: 2;
 }
 
 .tarjeta {
     background-color: #BCD09F;
     border: 2px solid #C2654C;
     color: #221C04;
-    border-radius: 20px; /*Redondear bordes*/
-    width: 90px; /*Ancho de la tarjeta*/
+    border-radius: 20px;
+    width: 120px;
     text-align: center;
-    padding: 20px; /*Tamaño de la tarjeta*/
+    padding: 10px 20px;
     font-weight: bold;
+    text-decoration: none;
+    transition: all 0.2s ease;
 }
 
 .tarjeta:hover {
-    background-color: #576E40;
-    color: #FFFFFF;
+    background-color: #A3BA8C;
+    transform: scale(1.05);
 }
 
+/**Main content**/
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.proyectos {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.tarjeta-proyecto-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin-top: 0;
+}
+
+.tarjeta-proyecto {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-proyecto:hover {
+    transform: scale(1.05);
+}
+
+.tarjeta-proyecto img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    display: block;
+    margin: 50px auto;
+    transition: opacity 0.3s ease;
+}
+
+.tarjeta-proyecto .hover-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.tarjeta-proyecto:hover .hover-text {
+    opacity: 1;
+}
